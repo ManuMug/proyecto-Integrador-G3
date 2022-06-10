@@ -1,6 +1,6 @@
-const req = require("express/lib/request");
 const fs = require("fs");
 const path = require("path");
+const db = require('../database/models')
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -8,8 +8,12 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controllers = {
   /* Renderizado de Listado de productos */
   productsList: (req, res) => {
-    const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-    res.render('products/products', { products })
+    db.Products.findAll()
+      .then(products=>{
+        res.render('products/products', { products })
+      })
+    /* const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); */
+    
   },
   /* Renderizado de carrito de compras */
   carrito: function (req, res, next) {
