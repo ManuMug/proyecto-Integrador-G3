@@ -21,11 +21,15 @@ const controllers = {
   },
   /* Renderizado de Detalle de un producto */
   productDetail: (req, res) => {
-    let id = req.params.id
+    db.Products.findByPk(req.params.id)
+      .then(products=>{
+        res.render('products/productDetail', {products:products})
+      })
+    /* let id = req.params.id
     let product = products.find(product => product.id == id);
     res.render('products/productDetail', {
       product
-    })
+    }) */
   },
   /* Renderizado de Formulario de creación */
   createForm: (req, res) => {
@@ -33,7 +37,16 @@ const controllers = {
   },
   /* Logica de creación */
   processCreate: (req, res) => {
-    if (req.file) {
+    db.Products.create({
+      name: req.body.name,
+      price: req.body.price,
+      discount: req.body.discount,
+      category: req.body.category,
+      description: req.body.description,
+      image: req.file.filename
+    })
+      res.redirect("/products")
+    /* if (req.file) {
       let newProduct = {
         id: products[products.length - 1].id + 1,
         name: req.body.name,
@@ -49,17 +62,31 @@ const controllers = {
       res.redirect('/products')
     } else {
       res.render('products/productCreate')
-    }
+    } */
   },
   /* Renderizado de Formulario de edición */
   editForm: (req,res) => {
-    let id = req.params.id
-    let product = products.find(product => product.id == id);
-    res.render('products/productEdit', { product })
+    db.Products.findByPk(req.params.id)
+      .then(products=>{
+        res.render('products/productEdit', {products})
+      })
   },
   /* Logica de edición */
   processEdit: (req, res) => {
-    let id = req.params.id
+    db.Products.update({
+      name: req.body.name,
+      price: req.body.price,
+      discount: req.body.discount,
+      category: req.body.category,
+      description: req.body.description,
+      image: req.file.filename
+    },{
+      where: {
+        id: req.params.id
+      }
+    })
+    res.redirect('/products/edit/' + req.params.id)
+    /* let id = req.params.id
     let prodEditing = products.find(product => product.id == id)
     let image
     if (req.file != undefined) {
@@ -79,11 +106,17 @@ const controllers = {
       return product
     })
     fs.writeFileSync(productsFilePath, JSON.stringify(prodEdited, null, ""))
-    res.redirect('/products')
+    res.redirect('/products') */
   },
   /* Logica de eliminación */
   delete: (req, res) => {
-    let id = req.params.id
+    db.Products.destroy({
+      where:{
+        id: req.params.id
+      }
+    })
+    res.redirect('/products')
+    /* let id = req.params.id
     let product = products.find(product => product.id == id)
     console.log(product)
     let imagePath = path.join(__dirname, '../public/img/products/', product.image)
@@ -94,7 +127,7 @@ const controllers = {
     let productsUpdate = products.filter((i) => i.id != id);
     let productsUpdatedJSON = JSON.stringify(productsUpdate, null, " ");
     fs.writeFileSync(productsFilePath, productsUpdatedJSON);
-    res.redirect("/products");
+    res.redirect("/products"); */
   },
 }
 module.exports = controllers;

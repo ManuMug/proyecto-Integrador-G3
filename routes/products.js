@@ -13,7 +13,7 @@ router.post("/create", upload.single('image'), controllers.processCreate)
 router.get("/cart", authMiddleware, controllers.carrito);
 //formulario de edicion
 router.get('/edit/:id', authMiddleware, controllers.editForm);
-router.put('/edit/:id', upload.single('image'), controllers.processEdit)
+router.post('/edit/:id', upload.single('image'), controllers.processEdit)
 //detalle de un producto
 router.get("/detail/:id", authMiddleware, controllers.productDetail);
 //eliminar un producto
