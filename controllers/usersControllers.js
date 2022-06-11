@@ -5,6 +5,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const { validationResult, body } = require("express-validator");
 const User = require("../models/Users");
 const bcryptjs = require('bcryptjs')
+const db = require('../database/models')
 
 const controllers = {
   /* Renderizado de Formulario de registro */
@@ -20,8 +21,16 @@ const controllers = {
         oldData: req.body
       });
     }
+    db.Users.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      direccion: req.body.direccion,
+      avatar: req.file.filename
+    })
+      res.redirect("/users/login")
 
-    const userInDB = User.findByField('email', req.body.email)
+    /* const userInDB = User.findByField('email', req.body.email)
     if (userInDB) {
       const errors = validationResult(req);
       if (errors.isEmpty()) {
@@ -52,7 +61,7 @@ const controllers = {
       return newUser
     } else {
       res.render('users/register')
-    }
+    } */
   },
   /* Renderizado de Formulario de login */
   loginForm: function (req, res, next) {
@@ -125,7 +134,13 @@ const controllers = {
   },
   /* Logica de eliminacion */
   delete: (req, res) => {
-    let id = req.params.id
+    db.Users.destroy({
+      where:{
+        id: req.params.id
+      }
+    })
+    res.redirect('/')
+    /* let id = req.params.id
     let user = users.find(user => user.id == id)
     let imagePath = path.join(__dirname, '../public/img/users/',)
     fs.unlink(imagePath, function (err) {
@@ -135,7 +150,7 @@ const controllers = {
     let usersUpdate = users.filter((i) => i.id != id);
     let usersUpdatedJSON = JSON.stringify(usersUpdate, null, " ");
     fs.writeFileSync(usersFilePath, usersUpdatedJSON);
-    res.redirect("/");
+    res.redirect("/"); */
   },
 }
 module.exports = controllers;
