@@ -28,7 +28,7 @@ const controllers = {
       direccion: req.body.direccion,
       avatar: req.file.filename
     })
-      res.redirect("/users/login")
+    res.redirect("/users/login")
 
     /* const userInDB = User.findByField('email', req.body.email)
     if (userInDB) {
@@ -77,41 +77,33 @@ const controllers = {
       });
     }
 
-    const userToLogin = User.findByField('email', req.body.email)
-    if (userToLogin) {
-      let userPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
-      if (userPassword) {
-        //delete userToLogin.password; PARA SEGURIDAD
-        req.session.userLogged = userToLogin
-        if (req.body.remember) {
-          console.log(req.body.remember === 'on')
-          res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 200 })
-        }
-        return res.redirect('/users/profile')
-      }
-      return res.render('users/login', {
-        errors: {
-          password: {
-            msg: 'Contraseña incorrecta'
-          }
-        },
-        /* PARA SEGURIDAD
-        errors: {
-          email: {
-            msg: 'Credenciales invalidas'
-          }
-        } */
-      });
-    }
+    db.Users.findAll()
+      .then(function (users) {
+        let userToLogin = users.find((i) => i.email == req.body.email)
+        if (userToLogin) {
+          let isOkPassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
+          if (isOkPassword) {
+            delete userToLogin.password
+            req.session.userLogged = userToLogin
+            if (req.body.remember) {
+              console.log(req.body.remember === 'on')
+              res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 200 })
 
-    return res.render('users/login', {
-      errors: {
-        email: {
-          msg: 'Email no registrado'
+            }
+            return res.redirect('/users/profile')
+          }
         }
-      }
-    })
+        return res.render('users/login', {
+          errors: {
+            password: {
+              msg: 'Contraseña incorrecta'
+            }
+          }
+        })
+      });
   },
+
+
   /* Renderizado de perfil */
   profile: function (req, res) {
     res.render('users/profile', {
@@ -135,7 +127,7 @@ const controllers = {
   /* Logica de eliminacion */
   delete: (req, res) => {
     db.Users.destroy({
-      where:{
+      where: {
         id: req.params.id
       }
     })

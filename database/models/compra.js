@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Compra'
+    let alias = 'Compras'
     let cols = {
         idCompra: {
             type: DataTypes.INTEGER,
@@ -15,8 +15,7 @@ module.exports = (sequelize, DataTypes) => {
             foreingKey: true,
         },
         fechaCompra: {
-            type: DataTypes.STRING,
-            createdAt: DataTypes.DATE
+            type: DataTypes.DATE,
         },
     }
     let config = {
@@ -26,15 +25,14 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: "deleted_at",
         paranoid: true
     }
-    let Product = sequelize.define(alias, cols, config)
-    /* Product.associate = function (models) {
-        Product.belongsToMany(models.User, {
-            as: 'products',
+    let Compra = sequelize.define(alias, cols, config)
+    /* Compra.associate = function (models) {
+        Compra.belongsToMany(models.Users, {
             as: 'users',
             foreingKey: 'idProduct',
             otherKey: "idUsers",
-            through: "Cartproduct"
+            through: false
         })
     } */
-    return Product
+    return Compra
 }

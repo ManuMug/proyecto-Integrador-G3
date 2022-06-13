@@ -14,19 +14,19 @@
        <%-include('../partials/header.ejs')%> 
     </header>
     
-    <h1><%= products.name %></h1>
+    <h1>Producto: <%= products.name %></h1>
     <div>
-      <img style="width:50%;" src="/img/products/<%= products.image %>" alt="">
+      <img style="width:40%;" src="/img/products/<%= products.image %>" alt="">
         <div>
-            <h2><%= products.price %></h2>
-            <p><%= products.description %></p>
+            <h2>Precio: $<%= products.price %></h2><br>
+            <p> Descripcion: <%= products.description %></p><br>
         </div>
-        <div>
-            <a href="/products/edit/<%= products.id %>" type="button" class="btn btn-outline-primary">Editar</a>
-            <form action="/products/delete/<%= products.id %>?_method=DELETE" method="POST">
-                <button type="submit" class="btn btn-outline-danger">Eliminar</button>
-            </form>
-        </div>
+        <div style="display: flex;flex-direction: row;align-content: space-between;justify-content: flex-start;align-items: flex-start;">
+          <a href="/products/edit/<%= products.idProduct %>" type="button" class="btn btn-outline-primary" style="margin-right:5px;">Editar</a><br><br>
+          <form action="/products/delete/?_method=DELETE" method="POST">
+              <button type="submit" class="btn btn-outline-danger">Eliminar</button>
+          </form>
+      </div>
     </div>
   
     <%-include('../partials/footer.ejs')%>

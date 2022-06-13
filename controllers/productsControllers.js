@@ -82,10 +82,10 @@ const controllers = {
       image: req.file.filename
     },{
       where: {
-        id: req.params.id
+        idProduct: req.params.id
       }
     })
-    res.redirect('/products/edit/' + req.params.id)
+    res.redirect('/products/detail/' + req.params.id)
     /* let id = req.params.id
     let prodEditing = products.find(product => product.id == id)
     let image
@@ -112,7 +112,7 @@ const controllers = {
   delete: (req, res) => {
     db.Products.destroy({
       where:{
-        id: req.params.id
+        idProduct: req.params.id
       }
     })
     res.redirect('/products')

@@ -19,7 +19,7 @@
         <div class="registro">
             <h3 class="registro">Editar producto: <%= products.name %></h3>
             <div class="formulario">
-                <form action="/products/edit/<%= products.id %>" method="POST" enctype="multipart/form-data">
+                <form action="/products/edit/<%= products.idProduct %>" method="POST" enctype="multipart/form-data">
                     <div class="registro">
                         <input type="text" name="name" id="name" placeholder="Nombre de producto" required minlength="2"
                             value=<%=products.name %>>
@@ -40,7 +40,9 @@
         <div class="buttons">
             <input type="submit" value="Editar un Producto" class="btn">
         </div>
-                </form>
+                 </form>
+        <!-- <button type="submit">Editar!</button> -->
+                
     </main>
 
     <footer>

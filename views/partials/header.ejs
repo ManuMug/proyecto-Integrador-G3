@@ -41,7 +41,7 @@
                         <div>
                             <h3 class="usuario"> 
                                 <a href="/users/profile">
-                                    <img src="../img/users/<%= locals.userLogged.avatar %>" alt="Avatar" style="max-width: 100px;display: block;border-radius: 50%;border: 5px solid #002050;">
+                                    <img src="/img/users/<%=locals.userLogged.avatar%>" alt="Avatar" style="max-width: 100px;display: block;border-radius: 50%;border: 5px solid #002050;">
                                 </a>
                                 <a href="/users/profile" class="usuario" style="margin: 10px;">
                                     <%= locals.userLogged.name %>
@@ -59,6 +59,7 @@
                                 <a href="/users/register" class="nav">Registrate<i class="fas fa-sign-in-alt"></i></a>
                             </li>
                         </ul>
+                        
                     <% } %>
 
 

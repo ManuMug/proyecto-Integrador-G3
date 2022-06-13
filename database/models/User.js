@@ -26,14 +26,13 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'users',
         timestamps: false
     }
-    let Product = sequelize.define(alias, cols, config)
-    /* Product.associate = function (models) {
-        Product.belongsToMany(models.User, {
-            as: 'carts_user',
-            foreingKey: 'product_id',
-            otherKey: "user_id",
-            through: "Cartproduct"
+    let User = sequelize.define(alias, cols, config)
+    /* User.associate = function (models) {
+        User.hasMany(models.Products, {
+            as: "Products",
+            foreingKey: 'idCompra',
+            through: "compra"
         })
     } */
-    return Product
+    return User
 }
