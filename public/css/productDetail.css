@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+:root {
+    --blanco: rgb(255, 255, 255);
+    --blanco-medio: #f5f3eb;
+    --naranja: #f49a1a;
+    --naranja-claro: #f7aa2c;
+    --celeste: #b0d0cf;
+    --azul: #1c3f80;
+    --azul-claro: #222d56;
+    --text-sm: 1.2em;
+    --text-md: 1.6em;
+    --text-lg: 1.8em;
+    --title-md: 2.4em;
+    --mochipop: 'Mochiy Pop One', sans-serif;    
+    --raleway: 'Raleway', sans-serif;
+    --letra-blanca: color:var(--blanco)
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+ 
+body{
+  background: var(--celeste);
+  transition: 0.6s linear;
+}
+ 
+.product-card{
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 400px;
+  background: #ecedef;
+  padding: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-transform: uppercase;
+  border-radius: 20px;
+}
+.product-card h1{
+  font-size: var(--title-md);
+  margin-bottom: 4px;
+  font-family: var(--mochipop);
+  color: var(--azul);
+  text-transform: lowercase;
+}
+.product-card p{
+  font-size: 14px;
+  color: var(--naranja-claro);
+  font-family: var(--raleway);
+  text-transform: initial;
+}
+.product-pic img{
+  background-image: url(1.png);
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: .6s linear;
+}
+.product-colors{
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+ 
+.product-colors span{
+  width: 14px;
+  height: 14px;
+  margin: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+.blue{
+  background: var(--azul);
+}
+.naranja{
+  background: var(--naranja);
+}
+.celeste{
+  background: var(--celeste);
+}
+.azulclaro{
+  background: var(--azul-claro);
+}
+ 
+.product-colors .active:after{
+  content: "";
+  width: 22px;
+  height: 22px;
+  border: 2px solid #8888;
+  position: absolute;
+  border-radius: 50%;
+  box-sizing: border-box;
+  left: -4px;
+  top: -4px;
+}
+.product-info{
+  display: flex;
+  align-items: center;
+}
+.product-price{
+  color: #7ed6df;
+  font-size: 26px;
+}
+.product-button{
+  margin-left: auto;
+  color: #7ed6df;
+  text-decoration: none;
+  border: 2px solid;
+  padding: 8px 24px;
+  border-radius: 20px;
+  transition: .4s linear;
+}
+ 
+.product-button:hover{
+  transform: scale(1.06);
+}
