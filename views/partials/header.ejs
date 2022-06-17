@@ -8,7 +8,7 @@
     <title>WOOF! Registro!</title>
     <link rel="stylesheet" href="/css/header.css">
     <link rel="icon" href="/img/Fondo.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    
 </head>
 
 <body>
@@ -23,16 +23,18 @@
                     <% if (locals.isLogged) { %>
                         <ul class="items">
                             <li>
-                                <a href="/products/create">
-                                    <span style="color:white;">Crea un producto </span><i class="fas fa-shopping-basket"></i>
+                                <a href="/products/create" class="nav">Crea un producto
+                                    <i class="fas fa-shopping-basket"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="/products/edit/"><span style="color:white;">Edita un producto </span><i class="fas fa-shopping-basket"></i>
+                                <a href="/products/edit/" class="nav">Edita un producto
+                                    <i class="fas fa-shopping-basket"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="/products/detail/"><span style="color:white;">Detalle producto </span><i class="fas fa-shopping-basket"></i>
+                                <a href="/products/detail/" class="nav">Detalle producto
+                                    <i class="fas fa-shopping-basket"></i>
                                 </a>
                             </li>
                         </ul>
@@ -51,10 +53,10 @@
                     <% }else { %>
                         <ul style="margin-right:30px;">
                             <li>
-                                <a href="/users/login"><span style="color:white;">Ingresá <i class="fas fa-sign-in-alt"></i></span></a>
+                                <a href="/users/login" class="nav">Ingresá <i class="fas fa-sign-in-alt"></i></a>
                             </li><br>
                             <li>
-                                <a href="/users/register"><span style="color:white;">Registrate <i class="fas fa-sign-in-alt"></i></span></a>
+                                <a href="/users/register" class="nav">Registrate<i class="fas fa-sign-in-alt"></i></a>
                             </li>
                         </ul>
                         

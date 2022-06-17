@@ -76,7 +76,7 @@ const controllers = {
         oldData: req.body
       });
     }
-
+    
     db.Users.findAll()
       .then(function (users) {
         let userToLogin = users.find((i) => i.email == req.body.email)
@@ -88,15 +88,21 @@ const controllers = {
             if (req.body.remember) {
               console.log(req.body.remember === 'on')
               res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 200 })
-
+              return res.redirect('/users/profile')
             }
-            return res.redirect('/users/profile')
+            return res.render('users/login', {
+              errors: {
+                password: {
+                  msg: 'Contraseña incorrecta'
+                }
+              }
+            })
           }
         }
         return res.render('users/login', {
           errors: {
-            password: {
-              msg: 'Contraseña incorrecta'
+            email: {
+              msg: 'Email no registrado'
             }
           }
         })
@@ -118,17 +124,31 @@ const controllers = {
   },
   /* Renderizado de formulario de edición */
   editForm: function (req, res) {
-    // Aquí renderiza el formulario de edición de un usuario específico
+    db.Users.findByPk(req.params.id)
+      .then(users => {
+        res.render('users/userEdit', { users })
+      })
   },
   /* Logica de edicion */
   processEdit: function (req, res) {
-    // Aquí va la lógica de la edición de usuario
+    db.Users.update({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      direccion: req.body.direccion,
+      avatar: req.file.filename
+    }, {
+      where: {
+        idUser: req.params.id
+      }
+    })
+    res.redirect('/users/profile')
   },
   /* Logica de eliminacion */
   delete: (req, res) => {
     db.Users.destroy({
       where: {
-        id: req.params.id
+        idUser: req.params.id
       }
     })
     res.redirect('/')

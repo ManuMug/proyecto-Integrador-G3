@@ -17,7 +17,7 @@ router.post('/edit/:id', upload.single('image'), controllers.processEdit)
 //detalle de un producto
 router.get("/detail/:id", authMiddleware, controllers.productDetail);
 //eliminar un producto
-router.delete('/delete/:id', authMiddleware, controllers.delete)
+router.post('/delete/:id', controllers.delete)
 
 
 

@@ -21,7 +21,9 @@
         <h3>Direccion: <%= user.direccion %></h3>
         <h3>Avatar:</h3><img src="../img/users/<%= user.avatar %>" alt="Avatar" style="max-width: 300px"><br><br>
         <a href="/users/logout" type="button" class="btn btn-outline-danger">Cerrar Sesion</a><br><br>
-        <a href="/users/delete" type="button" class="btn btn-outline-danger">Borrar Usuario</a><br><br>
+        <form action="/users/delete/<%= user.idUser %>" method="DELETE">
+            <button type="submit" class="btn btn-outline-danger">Eliminar</button><br><br>
+        </form><br><br>
     </section>
 
     <footer>

@@ -22,11 +22,11 @@ router.get("/profile", authMiddleware, controllers.profile);
 router.get("/logout", controllers.logout);
 
 /* Edición de usuario */
-// router.get("/edit/:id", controllers.editForm);
-// router.put("/edit/:id", controllers.processEdit);
+router.get("/edit/:id", controllers.editForm);
+router.post("/edit/:id", upload.single('avatar'), controllers.processEdit);
 
 /* Eliminación de usuario */
-router.get("/delete", controllers.delete);
+router.delete("/delete", controllers.delete);
 
 
 module.exports = router;

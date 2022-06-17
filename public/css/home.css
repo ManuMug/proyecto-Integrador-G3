@@ -29,6 +29,11 @@ head.icon{
     max-width: 100000px;
 }
 
+a{font-family: var(--mochipop);
+    text-decoration: none;
+    color: black ;
+    display: contents;}
+
 html {
 
     font-family: var(--mochipop);
@@ -38,7 +43,9 @@ body {
     background-color: var(--blanco);
 }
 
-
+.ashe {
+    color: var(--azul-claro)
+}
 
 section.banner img {
     width: 100%;
@@ -62,17 +69,15 @@ main {
 }
 
 .products-container{
-    background-color: var(--blanco-medio);
+    background-color: #f7f7f7;
 }
-
 main section div article {
     background-color: var(--blanco) !important;
     margin: 10px 10px;
 }
 
 main section{
-    padding: 10px 10px;
-    background-color: var(--blanco-medio);
+    padding: 10px 10px;;
     font-size: 75%;
 }
 
@@ -86,7 +91,9 @@ main section article img {
   
 .price {
     font-size: var(--text-lg);
+    color: black;
 }
+
   
 .discount, .description {
     font-size: var(--text-md);
@@ -102,7 +109,7 @@ main section article:hover .description {
 }
   
 main section article i, .discount {
-    color: var(--verde);
+    color: black
 }
 
 main section article i {
@@ -134,6 +141,11 @@ article div.product-card {
     position: relative;
 }
 
+.fa-truck:before {
+    content: "\f0d1";
+    color: black;
+}
+
 @media screen and (min-width: 361px){
     .description {
         opacity: 1;
@@ -145,6 +157,8 @@ article div.product-card {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
+        background-image: url("/img/Background naranja.png") !important;
+        background-repeat: repeat !important
     }
     .products-container div img {
         display: flex;

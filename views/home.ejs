@@ -17,20 +17,28 @@
     </section>
     <main>
       <section>
-        <h2>Productos:</h2>
+
+        <div style="display: flex;align-content: space-around;flex-direction: row;flex-wrap: nowrap;justify-content: space-between;align-items: center;    margin: 5px;">
+          <h1>Productos:</h1>
+          <a href="/products" class="ashe"><h1>Ver todos!</h1></a>
+        </div>
+        
         <div class="products-container">
           <% products.forEach(product => { %>
+          <a href="/products/detail/<%= product.idProduct %>" class="qsyo">
           <article>
             <img src="/img/products/<%= product.image %>" alt="">
             <div class="product-card">
               <i class="fas fa-truck"></i>
               <div class="flex-row">
                 <p class="price">$<%= product.price %></p>
-                <p class="discount"><%= product.discount %>%</p>
+                <p class="discount"><%= product.discount %>% OFF</p>
               </div>
-              <h3 class="description"><%= product.name %></h3>
+              <h3 class="description" style="color: #5c5c5c;" ><%= product.name %></h3>
+              <h3 class="description" style="color: #5c5c5c;" ><%= product.category %> </h3>
             </div>
           </article>
+        </a>
           <% }) %>
         </div>
       </section>
