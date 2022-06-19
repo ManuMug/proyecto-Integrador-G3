@@ -26,14 +26,19 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.categoria{
+    color:white
+}
+.servicio{
+    color:white
+}
 
 footer{
     margin: 0 auto;
     padding: 40px 10px 20px;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--celeste);
+    background-color: var(--azul-fuerte);
     align-items: flex-start;
     
 }
@@ -48,6 +53,7 @@ p{
 .contenido-footer{
     margin: 30px auto;
     text-align: center;
+    color: white
 }
 section.Copyright{
     background-color: #d9d4d4;

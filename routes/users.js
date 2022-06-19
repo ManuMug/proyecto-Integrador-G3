@@ -26,7 +26,7 @@ router.get("/edit/:id", controllers.editForm);
 router.post("/edit/:id", upload.single('avatar'), controllers.processEdit);
 
 /* Eliminación de usuario */
-router.delete("/delete", controllers.delete);
+router.post("/delete/:id", controllers.delete);
 
 
 module.exports = router;

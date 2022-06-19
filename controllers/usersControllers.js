@@ -76,7 +76,7 @@ const controllers = {
         oldData: req.body
       });
     }
-    
+
     db.Users.findAll()
       .then(function (users) {
         let userToLogin = users.find((i) => i.email == req.body.email)
@@ -86,18 +86,17 @@ const controllers = {
             delete userToLogin.password
             req.session.userLogged = userToLogin
             if (req.body.remember) {
-              console.log(req.body.remember === 'on')
               res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 200 })
-              return res.redirect('/users/profile')
             }
-            return res.render('users/login', {
-              errors: {
-                password: {
-                  msg: 'Contraseña incorrecta'
-                }
-              }
-            })
+            return res.redirect('/users/profile')
           }
+          return res.render('users/login', {
+            errors: {
+              password: {
+                msg: 'Contraseña incorrecta'
+              }
+            }
+          })
         }
         return res.render('users/login', {
           errors: {
@@ -151,7 +150,9 @@ const controllers = {
         idUser: req.params.id
       }
     })
-    res.redirect('/')
+    res.clearCookie('userEmail')
+    req.session.destroy();
+    return res.redirect('/')
     /* let id = req.params.id
     let user = users.find(user => user.id == id)
     let imagePath = path.join(__dirname, '../public/img/users/',)
