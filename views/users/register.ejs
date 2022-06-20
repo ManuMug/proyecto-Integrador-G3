@@ -21,7 +21,9 @@ rel="stylesheet" />
         <h3 class="registro">Creá tu cuenta aqui:</h3>
 
         <div class="formulario">
-
+            <div class="errores">
+                <ul class="err"></ul>
+            </div><br>
             <form action="/users/register" method="POST" enctype="multipart/form-data" class="formulario">
                 
                 <% if(typeof errors != 'undefined'){ %>
@@ -39,7 +41,7 @@ rel="stylesheet" />
                         <%= errors.email.msg %>
                     </li>
                 <% } %>
-
+                
                 <div class="registro">
                     <div>Nombre de usuario:</div><input type="text" name="name" id="name" placeholder="Nombre y apellido">
                     <div>Correo electrionico:</div><input type="email" name="email" id="email" placeholder="Correo@correo.com" >
@@ -63,6 +65,10 @@ rel="stylesheet" />
     <footer>
         <%-include('../partials/footer.ejs')%>
     </footer>
+
+    <script src="/js/registerValidator.js">
+    </script>
+    
 </body>
 </html>
 

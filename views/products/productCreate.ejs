@@ -22,15 +22,19 @@
             <h3 class="registro">Crea un nuevo producto:</h3>
 
             <div class="formulario">
-                <form action="/products/create" method="POST" enctype="multipart/form-data">
+                
+                
+                <form action="/products/create" method="POST" enctype="multipart/form-data" class="formulario">
+                    <div class="errores">
+                        <ul class="err"></ul>
+                    </div><br>
                     <div class="registro">
-                        <input type="text" name="name" id="name" placeholder="Nombre de producto" required
-                            minlength="2">
-                        <input type="number" name="price" id="price" placeholder="Precio" required>
-                        <input type="number" name="discount" id="discount" placeholder="Descuento" required>
-                        <input type="text" name="category" id="category" placeholder="Categoria" required>
-                        <input type="text" name="description" id="description" placeholder="Descripcion" required>
-                        <input type="file" name="image" id="image" placeholder="Imagen" required>
+                        <input type="text" name="name" id="name" placeholder="Nombre de producto">
+                        <input type="number" name="price" id="price" placeholder="Precio">
+                        <input type="number" name="discount" id="discount" placeholder="Descuento">
+                        <input type="text" name="category" id="category" placeholder="Categoria">
+                        <input type="text" name="description" id="description" placeholder="Descripcion">
+                        <input type="file" name="image" id="image" placeholder="Imagen">
                     </div>
 
 
@@ -48,6 +52,7 @@
     <footer>
         <%-include('../partials/footer.ejs')%>
     </footer>
+    <script src="/js/productCreate.js"></script>
 </body>
 
 </html>

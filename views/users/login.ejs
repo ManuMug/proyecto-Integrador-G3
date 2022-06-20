@@ -32,6 +32,9 @@
                 </ul>
             <% } %>
             <div class="formulario">
+                <div class="errores">
+                    <ul class="err"></ul>
+                </div><br>
             <div>Correo electrionico:</div>
             <input type="email" name="email" id="email" placeholder="correo@correo.com" >
             <% if (locals.errors && errors.email) { %>
@@ -40,7 +43,8 @@
                 </div>
             <% } %>
 
-            <div>Contraseña:</div><input type="password" name="password" id="password" placeholder="ingresa tu contraseña" >
+            <div>Contraseña:</div>
+            <input type="password" name="password" id="password" placeholder="ingresa tu contraseña" >
             <% if (locals.errors && errors.password/*.email*/) { %>
                 <div class="text-danger" style="color:red">
                     <%= errors.password/*.email*/.msg %>
@@ -58,12 +62,16 @@
             <div class="cuenta" style="margin: 10px;">
                 No tenes cuenta?<a href="/users/register">Registrate</a>
             </div>
-        </div>
+        
         </form>
     </main>
     <footer>
         <%-include('../partials/footer.ejs')%>
     </footer>
+
+    <script src="/js/loginValidator.js">
+    </script>
+    
 </body>
 
 </html>

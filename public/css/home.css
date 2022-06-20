@@ -146,7 +146,7 @@ article div.product-card {
     color: black;
 }
 
-@media screen and (min-width: 361px){
+@media screen and (min-width: 538px){
     .description {
         opacity: 1;
     }
@@ -174,7 +174,7 @@ article div.product-card {
     }   
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 900px) {
     .products-container article {
       max-width: 22%;
     }

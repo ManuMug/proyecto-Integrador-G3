@@ -87,6 +87,13 @@ ul {
     justify-content: space-evenly;
     align-items: flex-end;
 }
+ul.err{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
 li{
    list-style: none;
 }
@@ -198,7 +205,9 @@ div.submit:hover{
 
 
 /*MAIN*/
-
+div.errores{
+    color: orange;
+}
 .formulario{
     display: flex;
     flex-wrap: wrap;
