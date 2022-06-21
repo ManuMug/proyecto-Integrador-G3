@@ -6,13 +6,30 @@ const controllers = {
   /* Renderizado de Listado de productos */
   productsList: (req, res) => {
     db.Products.findAll()
-      .then(products=>{
-        res.json({ 
-            count: products.length,
-            data: products,
-            status: 200
-        })
+    .then((products) => {
+      /* Imprime campo detail en producto con url api */
+      for (let i = 0; i < products.length; i++) {
+        products[i].setDataValue(
+          'detail',
+          'http://localhost:3020/api/products/' + products[i].idProduct,
+        )
+      }
+
+      /* Imprime url de la foto para consumir */
+      for (let i = 0; i < products.length; i++) {
+        products[i].setDataValue(
+          'pathImg',
+          'http://localhost:3020/img/products/' +
+            products[i].image,
+        )
+      }
+
+      res.status(200).json({
+        count: products.length,
+        data: products,
+        status: 200,
       })
+    })
   },
   
   /* Renderizado de Detalle de un producto */
@@ -41,7 +58,7 @@ const controllers = {
       for (let i = 0; i < products.length; i++) {
         products[i].setDataValue(
           'detail',
-          'http://localhost:3020/api/products/' + products[i].product_id,
+          'http://localhost:3020/api/products/products/' + products[i].idProduct,
         )
       }
 
@@ -49,10 +66,8 @@ const controllers = {
       for (let i = 0; i < products.length; i++) {
         products[i].setDataValue(
           'pathImg',
-          'http://localhost:3020/images/shoes-img/' +
-            products[i].productName +
-            '/' +
-            products[i].img1,
+          'http://localhost:3020/img/products/' +
+            products[i].image,
         )
       }
 
