@@ -8,10 +8,12 @@ const controllers = {
     db.Users.findAll()
       .then(products => {
         res.json({
+          count: products.length,
           data: products,
           status: 200
         })
       })
+      
   },
 
   /* Renderizado de Detalle de un producto */

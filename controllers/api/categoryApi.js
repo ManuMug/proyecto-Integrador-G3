@@ -4,7 +4,7 @@ const db = require('../../database/models')
 
 const controllers = {
   /* Renderizado de Listado de productos */
-  productsList: (req, res) => {
+  categoryList: (req, res) => {
     db.Products.findAll()
       .then(products=>{
         res.json({ 

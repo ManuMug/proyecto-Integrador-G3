@@ -133,7 +133,7 @@ const controllers = {
     db.Users.update({
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password,
+      password: bcryptjs.hashSync(req.body.password, 10),
       direccion: req.body.direccion,
       avatar: req.file.filename
     }, {
