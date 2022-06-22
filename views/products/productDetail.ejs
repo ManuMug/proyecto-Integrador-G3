@@ -1,38 +1,54 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle de <%= products.name %></title>
+  <title>Detalle de <%= products.name %>
+  </title>
   <link rel="stylesheet" href="/css/Register.css">
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
   <link rel="icon" href="/img/LogoCircular32x32.png">
-  
+
 </head>
+
 <body>
-    <header>
-       <%-include('../partials/header.ejs')%> 
-    </header>
-    
-    <h1>Producto: <%= products.name %></h1>
+  <header>
+    <%-include('../partials/header.ejs')%>
+  </header>
+
+  </h1>
+  <div class="div-productDetail">
     <div>
-      <img style="width:30%;" src="/img/products/<%= products.image %>" alt="">
-        <div>
-            <h2>Precio: $<%= products.price %></h2><br>
-            <p> Descripcion: <%= products.description %></p><br>
-            <p> Categoria: <%= products.category %></p><br>
-        </div>
-        <div style="display: flex;flex-direction: row;align-content: space-between;justify-content: flex-start;align-items: flex-start;">
-          <a href="/products/edit/<%= products.idProduct %>" type="button" class="btn btn-outline-primary" style="margin-right:5px;">Editar</a><br><br>
-          
-          <form action="/products/delete/<%= products.idProduct %>" method="POST">
-              <button type="submit" class="btn btn-outline-danger">Eliminar</button><br><br>
-          </form>
-          
-          <!-- a href="/products/delete/<%= //products.idProduct %>" type="button" class="btn btn-outline-primary" style="margin-right:5px;" method="DELETE">Eliminar</a><br><br> -->
-      </div>
+      <img style="width: 300px;border-radius: 15%;margin-bottom: 10px;margin-top: 10px;" src="/img/products/<%= products.image %>">
     </div>
-  
-    <%-include('../partials/footer.ejs')%>
-  </body>
+
+    <div class="container-Detail">
+      <h3> <span>Nombre: </span>
+        <%= products.name %>
+      </h3>
+      <h3> <span>Precio:</span>
+        $<%= products.price %>
+      </h3>
+      <h3> <span>Categoria: </span>
+        <%= products.category %>
+      </h3>
+      <h3> <span>Descripción: </span>
+        <%= products.description %>
+      </h3>
+    </div>
+
+  </div><br>
+  <div class="div-BTN">
+    <a href="/products/edit/<%= products.idProduct %>" type="button" class="btn" style="margin-right:5px;">Editar</a>
+    <form action="/products/delete/<%= products.idProduct %>" method="POST">
+      <button type="submit" class="btn btn-outline-danger">Eliminar</button><br><br>
+    </form>
+
+    <!-- a href="/products/delete/<%= //products.idProduct %>" type="button" class="btn btn-outline-primary" style="margin-right:5px;" method="DELETE">Eliminar</a><br><br> -->
+  </div>
+
+  <%-include('../partials/footer.ejs')%>
+</body>
+
 </html>

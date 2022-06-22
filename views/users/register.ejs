@@ -20,11 +20,11 @@ rel="stylesheet" />
         <div class="registro">
         <h3 class="registro">Creá tu cuenta aqui:</h3>
 
-        <div class="formulario">
+        <div class="formulario" style="margin-bottom: 1em;">
             <div class="errores">
                 <ul class="err"></ul>
             </div><br>
-            <form action="/users/register" method="POST" enctype="multipart/form-data" class="formulario">
+            <form action="/users/register" method="POST" enctype="multipart/form-data" class="formulario" style="margin-bottom: 1em;">
                 
                 <% if(typeof errors != 'undefined'){ %>
                     <ul class="claseInutil">
@@ -44,9 +44,9 @@ rel="stylesheet" />
                 
                 <div class="registro">
                     <div>Nombre de usuario:</div><input type="text" name="name" id="name" placeholder="Nombre y apellido">
-                    <div>Correo electrionico:</div><input type="email" name="email" id="email" placeholder="Correo@correo.com" >
-                    <div>Contraseña:</div><input type="password" name="password" id="password" placeholder="Contraseña" >
-                    <div>Direccion:</div><input type="text" name="direccion" id="direccion" placeholder="Direccion" >
+                    <div>Correo electrionico:</div><input type="email" name="email" id="email" placeholder="Correo@correo.com">
+                    <div>Contraseña:</div><input type="password" name="password" id="password" placeholder="Contraseña">
+                    <div>Direccion:</div><input type="text" name="direccion" id="direccion" placeholder="Direccion">
                     <div>Avatar:</div><input type="file" name="avatar" id="avatar" placeholder="Avatar">
                 </div> 
 

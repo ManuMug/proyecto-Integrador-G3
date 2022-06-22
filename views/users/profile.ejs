@@ -13,18 +13,30 @@
         <%-include('../partials/header.ejs')%>
     </header>
 
-    <section style="margin-left: 10px; margin-top: 10px;">
-        <h1 style="margin-bottom: 5px;">Perfil:</h1>
-        <h3>Nombre: <%= user.name %></h3>
-        <h3>Email: <%= user.email %></h3>
-        <h3>Contraseña: <%= user.password %></h3>
-        <h3>Direccion: <%= user.direccion %></h3>
-        <h3>Avatar:</h3><img src="../img/users/<%= user.avatar %>" alt="Avatar" style="max-width: 300px"><br><br>
-        <a href="/users/logout" type="button" class="btn btn-outline-danger">Cerrar Sesion</a><br><br>
-        <a href="/users/edit/<%= user.idUser %>" type="button" class="btn btn-outline-primary">Editar</a><br><br>
-        <form action="/users/delete/<%= user.idUser %>" method="POST">
-            <button type="submit" class="btn btn-outline-danger">Eliminar</button><br><br>    
-        </form>
+    <section style="margin: 10px;">
+        <div class="div-contenedorr">
+            <div>
+                <img src="../img/users/<%= user.avatar %>" alt="Avatar" style="max-width: 300px;border-radius: 10%;margin-bottom: 10px;
+                margin-top: 10px;">
+            </div>
+            <div class="profile-container">
+                <h1 style="margin-bottom: 5px;color: var(--azul-fuerte);">Perfil</h1>
+                <h3> <span>Nombre: </span> <%= user.name %></h3>
+                <h3> <span>Email: </span> <%= user.email %></h3>
+                <h3> <span>Contraseña: </span> <%= user.password %></h3>
+                <h3> <span>Direccion: </span> <%= user.direccion %></h3>
+            </div>
+
+        </div>
+        <br>
+        <div class="botones-profile">
+            <a href="/users/logout" type="button" class="btn">Cerrar Sesion</a>
+            <a href="/users/edit/<%= user.idUser %>" type="button" class="btn">Editar</a>
+            <form action="/users/delete/<%= user.idUser %>" method="POST">
+                <button type="submit" class="btn">Eliminar</button>
+            </form>
+        </div>
+
     </section>
 
     <footer>

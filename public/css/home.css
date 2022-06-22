@@ -146,6 +146,8 @@ article div.product-card {
     color: black;
 }
 
+
+
 @media screen and (min-width: 538px){
     .description {
         opacity: 1;
@@ -174,9 +176,41 @@ article div.product-card {
     }   
 }
 
+@media screen and (min-width: 700px) {
+    .products-container article {
+      max-width: 27%;
+    }
+}
 
+@media screen and (min-width:949px){
+    .description {
+        opacity: 1;
+    }
+    
+    .products-container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        background-image: url("/img/Background naranja.png") !important;
+        background-repeat: repeat !important
+    }
+    .products-container div img {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 400px;
+    }
+    
+    .products-container article {
+        max-width: 30%;
+    }   
+}
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 949px) {
     .products-container article {
       max-width: 22%;
     }

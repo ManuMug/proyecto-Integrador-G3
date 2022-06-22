@@ -28,7 +28,7 @@
 /*BOOODDYY*/
 
 body{
-    background-color: --var(--blanco-medio);
+    background-image: url("/img/Background naranja.png") !important;
 }
 
 /*HEADER*/
@@ -57,10 +57,38 @@ div.top-header{
     max-height: 130px;
     margin-top: -3px;
     width: 200px;   
+    padding: 10px;
 }
 img.inferior{
     
     background-color: white;
+}
+
+.div-productDetail{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    background: #cfcfcf;
+    margin: 10px;
+    align-content: stretch;
+    padding: 10px;
+}
+
+.div-BTN{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.container-Detail{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: black;
 }
 
 div.atraccion{
@@ -79,7 +107,6 @@ nav{
 }
 a.nav{
     color: rgb(240, 240, 240);
-    text-decoration: underline;
 }
 
 ul {
@@ -202,6 +229,16 @@ div.submit:hover{
     background-color: rgb(168, 168, 235)
 }
 
+.div-contenedorr{
+    padding: 10px;
+    background-color: var(--naranja-claro);
+    display: flex;
+    overflow-wrap: anywhere;
+    background-color: var(--azul-fuerte);
+    background: #cfcfcf;
+}
+
+
 
 
 /*MAIN*/
@@ -267,9 +304,29 @@ h3.ingreso{
     
 }
 
+.profile-container{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: black;
+}
+
 .cuenta{
     display: flex;
     justify-content: center;
+}
+
+span{
+    color: var(--azul-fuerte);
+}
+
+.botones-profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-bottom: 25px;
 }
 
 h4{
@@ -279,10 +336,7 @@ h4{
     font-size: 14px;
     width: 100%;
 }
-form{
-    
-    padding-bottom: 1em;
-}
+
 input{
     display: flex;
     width: 82%;
@@ -314,13 +368,15 @@ div.buttons{
 }
 .btn{
   justify-content: center;
-    background-color: var(--azul);
-    color: var(--celeste);
+    background-color: #cfcfcf;
+    color: var(--azul-fuerte);
+    padding: 8px;
 }
     .btn:hover{
         transition: 0.5s ease;
    background-color:  var(--azul-fuerte);
     cursor: pointer;
+    color: white;
 }
     
 .remember{
@@ -350,6 +406,8 @@ footer{
 div.contacto{
     border-left: 1px solid;
 }
+
+
 p{
     font-family: var(--mochipop);
     text-decoration: none;
