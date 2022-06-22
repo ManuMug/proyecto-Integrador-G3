@@ -69,7 +69,7 @@ img.inferior{
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: stretch;
-    background: #cfcfcf;
+    background: #eeee;
     margin: 10px;
     align-content: stretch;
     padding: 10px;
@@ -174,9 +174,9 @@ div.password{
     border: 1px solid #b7afaf;
 }
 
-div.formulario{
-    border: 1px solid #b7afaf;
-}
+/* div.formulario{
+    
+} */
 div.ingreso{
    width: 100%;
    margin-left: 17px;
@@ -235,7 +235,10 @@ div.submit:hover{
     display: flex;
     overflow-wrap: anywhere;
     background-color: var(--azul-fuerte);
-    background: #cfcfcf;
+    background: #eeee;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 

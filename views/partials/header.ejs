@@ -16,29 +16,19 @@
         <nav>
             <div class="atraccion">
                 <a href="/">
-                    <img style="margin-left:30px;width:250px;height:75px;" src="/img/logoPiolon.png" alt="Logo de Woof!" class="logoHome">
+                    <img style="width:250px;height:75px;" src="/img/logoPiolon.png" alt="Logo de Woof!" class="logoHome">
                 </a>
 
                 
                     <% if (locals.isLogged) { %>
                         <ul class="items">
                             <li>
-                                <a href="/products/create" class="nav">Crea un producto
-                                    <i class="fas fa-shopping-basket"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/products/edit/" class="nav">Edita un producto
-                                    <i class="fas fa-shopping-basket"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/products/detail/" class="nav">Detalle producto
-                                    <i class="fas fa-shopping-basket"></i>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="/products" class="nav">Productos
+                                    <i class="fas fa-shopping-basket"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/products/create" class="nav">Crea un producto
                                     <i class="fas fa-shopping-basket"></i>
                                 </a>
                             </li>

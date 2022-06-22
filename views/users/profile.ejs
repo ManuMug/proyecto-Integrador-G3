@@ -23,7 +23,6 @@
                 <h1 style="margin-bottom: 5px;color: var(--azul-fuerte);">Perfil</h1>
                 <h3> <span>Nombre: </span> <%= user.name %></h3>
                 <h3> <span>Email: </span> <%= user.email %></h3>
-                <h3> <span>Contraseña: </span> <%= user.password %></h3>
                 <h3> <span>Direccion: </span> <%= user.direccion %></h3>
             </div>
 
@@ -31,9 +30,9 @@
         <br>
         <div class="botones-profile">
             <a href="/users/logout" type="button" class="btn">Cerrar Sesion</a>
-            <a href="/users/edit/<%= user.idUser %>" type="button" class="btn">Editar</a>
+            <a href="/users/edit/<%= user.idUser %>" type="button" class="btn">Editar usuario</a>
             <form action="/users/delete/<%= user.idUser %>" method="POST">
-                <button type="submit" class="btn">Eliminar</button>
+                <button type="submit" class="btn">Eliminar usuario</button>
             </form>
         </div>
 

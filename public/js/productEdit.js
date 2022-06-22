@@ -13,8 +13,8 @@ window.addEventListener('load', () => {
 
         if(name.value == ""){
             errores.push('Nombre: Debe Ingresar un Nombre')
-        }else if(name.value.length < 3){
-            errores.push('Nombre: Debe Ingresar al menos 3 caracteres')
+        }else if(name.value.length < 2){
+            errores.push('Nombre: Debe Ingresar al menos 2 caracteres')
         }
 
         if(price.value == ""){

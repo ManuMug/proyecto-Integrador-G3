@@ -49,11 +49,8 @@ header {
 
 .items {
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 div.top-header p {
@@ -71,8 +68,17 @@ div.top-header {
 }
 
 
-div.atraccion{
-    padding: 30px;
+div.atraccion {
+    margin: 0 auto;
+    padding: 40px 10px 20px;
+    background-color: var(--azul-fuerte);
+    display: flex;
+    width: 100%;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
 }
 
 img.superior {
@@ -90,15 +96,6 @@ img.inferior {
     background-color: white;
 }
 
-div.atraccion {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-content: flex-start;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: flex-end;
-}
 
 div.buscador {
     margin-top: -95px;
@@ -170,9 +167,6 @@ div.password {
     border: 1px solid #b7afaf;
 }
 
-div.formulario {
-    border: 1px solid #b7afaf;
-}
 
 div.ingreso {
     width: 100%;

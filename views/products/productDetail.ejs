@@ -24,13 +24,13 @@
     </div>
 
     <div class="container-Detail">
-      <h3> <span>Nombre: </span>
-        <%= products.name %>
-      </h3>
-      <h3> <span>Precio:</span>
+      <h1> <!-- <span>Nombre: </span> -->
+        <span><%= products.name %></span>
+      </h1>
+      <h3> <!-- <span>Precio:</span> -->
         $<%= products.price %>
       </h3>
-      <h3> <span>Categoria: </span>
+      <h3> <!-- <span>Categoria: </span> -->
         <%= products.category %>
       </h3>
       <h3> <span>Descripción: </span>
@@ -40,9 +40,9 @@
 
   </div><br>
   <div class="div-BTN">
-    <a href="/products/edit/<%= products.idProduct %>" type="button" class="btn" style="margin-right:5px;">Editar</a>
+    <a href="/products/edit/<%= products.idProduct %>" type="button" class="btn" style="margin-right:5px;">Editar producto</a>
     <form action="/products/delete/<%= products.idProduct %>" method="POST">
-      <button type="submit" class="btn btn-outline-danger">Eliminar</button><br><br>
+      <button type="submit" class="btn btn-outline-danger">Eliminar producto</button><br><br>
     </form>
 
     <!-- a href="/products/delete/<%= //products.idProduct %>" type="button" class="btn btn-outline-primary" style="margin-right:5px;" method="DELETE">Eliminar</a><br><br> -->
