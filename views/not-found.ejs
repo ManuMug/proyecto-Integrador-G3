@@ -2,11 +2,14 @@
 <html>
   <head>
     <title>Error</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/css/Register.css">
   </head>
   <body>
-    <h2><%= message %></h2>
+    <%-include('./partials/header.ejs')%><br>
+    <h1>ERROR 404</h1>
+    <h2><%= message %></h2> 
     <h2><%= error.status %></h2>
-    <pre><%= error.stack %></pre>
+    <pre><%= error.stack %></pre><br>
+    <%-include('./partials/footer.ejs')%>
   </body>
 </html>

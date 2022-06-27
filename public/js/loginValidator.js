@@ -12,8 +12,8 @@ window.addEventListener('load',(e)=>{
         if(e.key !== "{"){
             email.style.backgroundColor = "white"
         }
-    }) */
-
+    })*/
+ 
     form.addEventListener('submit', (e)=>{
 
         let errores = []

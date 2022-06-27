@@ -21,16 +21,4 @@ router.post('/delete/:id', controllers.delete)
 
 
 
-
-
-
-
-/*
-router.get("/:id/edit", controlers.edit);
-
-router.put("/:id", controlers.update);
-
-router.delete("/:id", controlers.delete);
-*/
-
 module.exports = router;

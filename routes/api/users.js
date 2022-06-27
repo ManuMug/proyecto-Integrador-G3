@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var controllers = require("../../controllers/api/usersApi");
-var upload = require('../../middlewares/multerProduct')
-const authMiddleware = require('../../middlewares/authMiddleware')
+/* var upload = require('../../middlewares/multerProduct')
+const authMiddleware = require('../../middlewares/authMiddleware') */
 
 //listado de productos
 router.get('/', controllers.userList);
