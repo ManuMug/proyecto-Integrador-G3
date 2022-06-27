@@ -39,7 +39,7 @@ header {
 .usuario {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
     color: white;
 }
@@ -77,7 +77,7 @@ div.atraccion {
     align-content: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-around;
 }
 

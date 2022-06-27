@@ -6,6 +6,7 @@
     <title>WOOF!</title>
     <link rel="stylesheet" href="/css/home.css">
     <link rel="icon" href="/img/LogoCircular32x32.png">
+    <script src="https://kit.fontawesome.com/931a27a940.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -29,9 +30,9 @@
           <article>
             <img src="/img/products/<%= product.image %>" alt="">
             <div class="product-card">
-              <i class="fas fa-truck"></i>
+              <i class="fa-solid fa-dog"></i>
               <div class="flex-row">
-                <p class="price">$<%= product.price %></p>
+                <p class="price" style="color:var(--azul-fuerte)">$<%= product.price %></p>
                 <p class="discount"><%= product.discount %>% OFF</p>
               </div>
               <h3 class="description" style="color: #5c5c5c;" ><%= product.name %></h3>

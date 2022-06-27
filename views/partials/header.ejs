@@ -16,7 +16,7 @@
         <nav>
             <div class="atraccion">
                 <a href="/">
-                    <img style="width:250px;height:75px;" src="/img/logoPiolon.png" alt="Logo de Woof!" class="logoHome">
+                    <img style="width:250px;height:75px;margin-bottom: 15px;" src="/img/logoPiolon.png" alt="Logo de Woof!" class="logoHome">
                 </a>
 
                 
@@ -34,15 +34,14 @@
                             </li>
                         </ul>
                         <div>
-                            <h3 class="usuario"> 
+                            <div class="usuario"> 
                                 <a href="/users/profile">
-                                    <img src="/img/users/<%=locals.userLogged.avatar%>" alt="Avatar" style="max-width: 100px;display: block;border-radius: 50%;border: 5px solid #002050;">
+                                    <img src="/img/users/<%=locals.userLogged.avatar%>" alt="Avatar" style="max-width: 70px;/* display: block; */border-radius: 50%;display: flex;flex-direction: row-reverse;">
                                 </a>
                                 <a href="/users/profile" class="usuario" style="margin: 10px;">
                                     <%= locals.userLogged.name %>
-                                </a>
-                                
-                            </h3>
+                                </a>                               
+                            </div>
                         </div>
 
                     <% }else { %>

@@ -271,7 +271,7 @@ main{
 h3.registro{
     font-size: var(--text-md);
     width: 90%;
-    padding: 1em;
+    padding-top: 1em;
     text-align: center;
     margin: 0 auto;
     
